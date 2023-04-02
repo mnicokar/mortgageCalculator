@@ -1,0 +1,29 @@
+1. React Functional Components
+rafce //nice snippets
+
+2. Material UI
+
+Easy/fast way of desiging the front end. Search up the components you want and read the documentation to use them. 
+
+<Typography ...> needed to make sure style stays consistent
+
+3. Handling Props
+
+Checkout the sliderComponent and Slider Select. 
+
+4. Props destructing
+
+
+Checkout the sliderComponent and Slider Select. 
+
+<SliderComponent min = {0} max = {50} defaultValue = {20} step = {10} onChange = {(e) => {console.log(e.target.value)}}/>
+
+or
+
+
+<SliderComponent min = {0} max = {50} defaultValue = {20} step = {10} onChange = {(e,value) => {console.log(value)}}/>
+
+
+5. useState Hook
+
+strict makes it print console log twice
