@@ -5,9 +5,14 @@ import { Pie } from "react-chartjs-2";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-const Result = ({ homeValue, downPayment, loanAmount, loanTerm, interestRate }) => {
+const Result = ({
+  homeValue,
+  downPayment,
+  loanAmount,
+  loanTerm,
+  interestRate,
+}) => {
   //destructure the data
-  
 
   const totalLoanMonths = loanTerm * 12;
 
@@ -18,6 +23,11 @@ const Result = ({ homeValue, downPayment, loanAmount, loanTerm, interestRate }) 
       interestPerMonth *
       (1 + interestPerMonth) ** totalLoanMonths) /
     ((1 + interestPerMonth) ** totalLoanMonths - 1);
+
+  const formatter = new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+  });
 
   const totalInterestGenerated = monthlyPayment * totalLoanMonths - loanAmount;
 
@@ -34,9 +44,12 @@ const Result = ({ homeValue, downPayment, loanAmount, loanTerm, interestRate }) 
     ],
   };
   return (
-    <Stack gap = {3}>
-      <Typography textAlign="center" variant="h5"> Monthly Payment: ${monthlyPayment.toFixed(2)} </Typography>
-      <Stack direction='row' justifyContent='center'>
+    <Stack gap={3}>
+      <Typography textAlign="center" variant="h5">
+        {" "}
+        Monthly Payment: {formatter.format(monthlyPayment)}{" "}
+      </Typography>
+      <Stack direction="row" justifyContent="center">
         <div>
           <Pie data={pieChartData} />
         </div>

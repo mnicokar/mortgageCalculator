@@ -5,14 +5,9 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 
-const TenureSelect = ({data,setData}) => {
-  
-
+const TenureSelect = ({ loanTerm, setLoanTerm }) => {
   const handleChange = (event) => {
-    setData({
-      ...data,
-      loanTerm: event.target.value}
-      );
+    setLoanTerm(event.target.value);
   };
   return (
     <FormControl fullWidth>
@@ -20,7 +15,7 @@ const TenureSelect = ({data,setData}) => {
       <Select
         labelId="demo-simple-select-label"
         id="demo-simple-select"
-        value={data.loanTerm}
+        value={loanTerm}
         label="Tenure"
         onChange={handleChange}
       >

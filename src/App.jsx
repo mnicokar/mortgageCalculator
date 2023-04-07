@@ -3,7 +3,7 @@ import Navbar from "./components/Navbar";
 import Result from "./components/Result";
 import SliderSelect from "./components/SliderSelect";
 import TenureSelect from "./components/TenureSelect";
-import { useState} from "react";
+import { useState } from "react";
 
 function App() {
   //name, function
@@ -14,7 +14,6 @@ function App() {
   const [loanTerm, setLoanTerm] = useState(5);
   const [interestRate, setInterestRate] = useState(5);
 
-  //<TenureSelect data={data} setData={setData}/>
   return (
     <div className="App">
       <Navbar />
@@ -22,6 +21,18 @@ function App() {
         <Grid container spacing={5} alignItems="center">
           <Grid item xs={12} md={6}>
             <SliderSelect
+              homeValue={homeValue}
+              setHomeValue={setHomeValue}
+              downPayment={downPayment}
+              setDownPayment={setDownPayment}
+              loanAmount={loanAmount}
+              setLoanAmount={setLoanAmount}
+              loanTerm={loanTerm}
+              setLoanTerm={setLoanTerm}
+              interestRate={interestRate}
+              setInterestRate={setInterestRate}
+            />
+            <TenureSelect
               homeValue={homeValue}
               setHomeValue={setHomeValue}
               downPayment={downPayment}

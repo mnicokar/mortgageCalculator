@@ -10,12 +10,13 @@ const SliderComponent = ({
   label,
   unit,
 }) => {
+
   return (
     <Stack my={1.4}>
       <Stack gap={1} direction={"column"}>
         <Typography variant="subtitle2">{label}</Typography>
         <Typography variant="h5">
-          {unit} {value}
+          {unit} {value.toLocaleString()}
         </Typography>
       </Stack>
 
@@ -36,7 +37,7 @@ const SliderComponent = ({
         </Typography>
         <Typography variant="caption" color="text.secondary">
           {unit}
-          {max}
+          {max.toLocaleString()}
         </Typography>
       </Stack>
     </Stack>
