@@ -6,7 +6,7 @@ import TenureSelect from "./components/TenureSelect";
 import { useState } from "react";
 
 function App() {
-  const [homeValue, setHomeValue] = useState(3000);
+  const [homeValue, setHomeValue] = useState(150000);
   const [downPayment, setDownPayment] = useState(homeValue * 0.2);
   const [loanAmount, setLoanAmount] = useState(homeValue * 0.8);
   const [loanTerm, setLoanTerm] = useState(5);
