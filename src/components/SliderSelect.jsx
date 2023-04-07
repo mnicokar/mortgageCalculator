@@ -19,10 +19,21 @@ const SliderSelect = ({
     setLoanAmount(value * 0.8);
   };
 
-
+  const handleInputChange = (e) => {
+    const value = parseInt(e.target.value);
+    if (!isNaN(value) && value >= 0 && value <= bankLimit) {
+      setHomeValue(value);
+      setDownPayment(value * 0.2);
+      setLoanAmount(value * 0.8);
+    }
+  };
 
   return (
     <>
+    <div style={{ marginTop: 16 }}>
+        
+      
+      </div>
       <SliderComponent
         min={0}
         max={bankLimit}
@@ -32,6 +43,8 @@ const SliderSelect = ({
         value={homeValue}
         onChange={(event, value) => handleHomeValueChange(value)}
       />
+
+      
 
       <SliderComponent
         onChange={(e, value) =>

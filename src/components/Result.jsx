@@ -49,13 +49,18 @@ const Result = ({
         {" "}
         Monthly Payment: {formatter.format(monthlyPayment)}{" "}
       </Typography>
+      <Typography textAlign="center" variant="h5">
+        Overall Cost: {formatter.format(homeValue + totalInterestGenerated)}
+      </Typography>
       <Stack direction="row" justifyContent="center">
         <div>
           <Pie data={pieChartData} />
         </div>
       </Stack>
+      
     </Stack>
   );
+  
 };
 
 export default Result;

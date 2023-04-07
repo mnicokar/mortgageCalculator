@@ -6,13 +6,15 @@ import TenureSelect from "./components/TenureSelect";
 import { useState } from "react";
 
 function App() {
-  //name, function
-
   const [homeValue, setHomeValue] = useState(3000);
   const [downPayment, setDownPayment] = useState(homeValue * 0.2);
   const [loanAmount, setLoanAmount] = useState(homeValue * 0.8);
   const [loanTerm, setLoanTerm] = useState(5);
   const [interestRate, setInterestRate] = useState(5);
+
+  function handleHomeValueChange(e) {
+    setHomeValue(e.target.value);
+  }
 
   return (
     <div className="App">
@@ -20,6 +22,7 @@ function App() {
       <Container maxWidth="xl" sx={{ mt: 4 }}>
         <Grid container spacing={5} alignItems="center">
           <Grid item xs={12} md={6}>
+            
             <SliderSelect
               homeValue={homeValue}
               setHomeValue={setHomeValue}
@@ -44,6 +47,10 @@ function App() {
               interestRate={interestRate}
               setInterestRate={setInterestRate}
             />
+            
+              
+              
+            
           </Grid>
 
           <Grid item xs={12} md={6}>
