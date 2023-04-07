@@ -5,9 +5,9 @@ import { Pie } from "react-chartjs-2";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-const Result = ({ data }) => {
+const Result = ({ homeValue, downPayment, loanAmount, loanTerm, interestRate }) => {
   //destructure the data
-  const { homeValue, downPayment, loanAmount, loanTerm, interestRate } = data;
+  
 
   const totalLoanMonths = loanTerm * 12;
 
