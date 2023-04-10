@@ -16,6 +16,7 @@ const Navbar = () => {
             <a
               style={{ textDecoration: "none", color: "inherit" }}
               href="https://github.com/mnicokar/mortgageCalculator"
+              target="_blank"
             >
               {" "}
               <DiGithubBadge
